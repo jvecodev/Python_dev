@@ -23,9 +23,31 @@ Tab_cruzada = dados_livros.merge(dados_avaliacao, how='inner', on='ISBN')
 Tab_cruzada = Tab_cruzada.merge(dados_usuarios, how ='inner', on='User-ID')
 
 
-print("Dimensões da Tabela Cruzada (Livros + Avaliações):")
+# print("Dimensões da Tabela Cruzada (Livros + Avaliações):")
 
-print(Tab_cruzada.shape)
-print(Tab_cruzada.head())
+# print(Tab_cruzada.shape)
+# print(Tab_cruzada.head())
 
+
+# converter coluna ano
+
+# como resolver ruido nos dados
+
+
+# Investigação
+# for linha in Tab_cruzada['Year-Of-Publication'].value_counts().index:
+#     print(linha)
+
+
+Tab_cruzada.iloc[975881,3] = ''
+Tab_cruzada.iloc[959681,3] = ''
+Tab_cruzada.iloc[959682,3] = ''
+Tab_cruzada.iloc[974669,3] = ''
+
+# converter coluna ano
+
+Tab_cruzada['Year-Of-Publication'] = pd.to_numeric(Tab_cruzada['Year-Of-Publication'])
+
+
+print(Tab_cruzada.dtypes)
 
