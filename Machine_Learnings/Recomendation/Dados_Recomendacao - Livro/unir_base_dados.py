@@ -25,6 +25,7 @@ Tab_cruzada = Tab_cruzada.merge(dados_usuarios, how ='inner', on='User-ID')
 
 # print("Dimensões da Tabela Cruzada (Livros + Avaliações):")
 
+# shape 
 # print(Tab_cruzada.shape)
 # print(Tab_cruzada.head())
 
